@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(java -version)",
+      "Bash(mvn -v)",
+      "PowerShell(java *)",
+      "PowerShell(Get-ChildItem *)",
+      "WebSearch",
+      "PowerShell(try { $sha = \\(Invoke-WebRequest -UseBasicParsing \"https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip.sha512\"\\).Content; \"sha512: $sha\" } catch { \"no sha512 available\" })",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(.\\\\mvnw.cmd -v)",
+      "PowerShell(.\\\\mvnw.cmd -B package)"
+    ]
+  }
+}
