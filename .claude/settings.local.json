@@ -9,7 +9,13 @@
       "PowerShell(try { $sha = \\(Invoke-WebRequest -UseBasicParsing \"https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip.sha512\"\\).Content; \"sha512: $sha\" } catch { \"no sha512 available\" })",
       "PowerShell(Remove-Item *)",
       "PowerShell(.\\\\mvnw.cmd -v)",
-      "PowerShell(.\\\\mvnw.cmd -B package)"
+      "PowerShell(.\\\\mvnw.cmd -B package)",
+      "PowerShell(git push *)",
+      "PowerShell(git config *)",
+      "PowerShell(foreach \\($p in 7890,7897,10809,10808,1080,8888,8118,2080\\) { $r = Test-NetConnection 127.0.0.1 -Port $p -WarningAction SilentlyContinue; if \\($r.TcpTestSucceeded\\) { \"Port $p : OPEN\" } else { \"Port $p : closed\" } })",
+      "PowerShell($r = Test-NetConnection ssh.github.com -Port 443 -WarningAction SilentlyContinue; \"ssh.github.com:443 TCP = $\\($r.TcpTestSucceeded\\)\")",
+      "PowerShell(if \\(Test-Path \"$env:USERPROFILE\\\\.ssh\"\\) { Get-ChildItem \"$env:USERPROFILE\\\\.ssh\" | Select-Object Name } else { \"no .ssh directory\" })",
+      "PowerShell(.\\\\mvnw.cmd -B -q package; if \\($?\\) { \"REBUILD OK\" })"
     ]
   }
 }
